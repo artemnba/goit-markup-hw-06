@@ -584,16 +584,14 @@ address {
   fill: var(--white-colortext);
 }
 .footer-form {
-  margin-left: 93px;
-  margin-bottom: 83px;
+  margin-left: auto;
 }
 .footer-email {
   display: flex;
   column-gap: 12px;
 }
 .footer-subs {
-  display: flex;
-  flex-direction: column;
+  display: block;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.1;
@@ -608,6 +606,7 @@ address {
   width: 358px;
   height: 50px;
   background-color: var(--dark-bg-color);
+  color: var(--white-colortext);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
   padding-left: 16px;
@@ -625,7 +624,9 @@ address {
   color: var(--white-colortext);
   border-radius: 4px;
   border: none;
+  cursor: pointer;
   font-style: Bold;
+  font-weight: 700;
   font-size: 16px;
   line-height: 1.6;
   letter-spacing: 0.06em;
@@ -668,6 +669,7 @@ address {
   z-index: 100;
   min-height: 581px;
   min-width: 528px;
+  padding: 40px;
   background-color: var(--body-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -691,14 +693,12 @@ address {
   width: 18px;
   height: 18px;
   fill: currentColor;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-btn:hover > .icon-vector {
   fill: var(--blue-colortext);
 }
 
-.modal-form {
-  margin: 40px;
-}
 .modal-title {
   font-weight: 700;
   font-size: 20px;
@@ -714,6 +714,10 @@ address {
   gap: 4px;
   margin-bottom: 10px;
 }
+
+.form-textarea {
+  margin-bottom: 20px;
+}
 .form-input {
   display: block;
   border: 1px Solid rgba(33, 33, 33, 0.2);
@@ -721,10 +725,14 @@ address {
   padding-left: 40px;
   width: 100%;
   height: 40px;
+  transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form-input:focus {
+  border-color: var(--blue-bg-color);
 }
 .form-input:focus + .form-icon {
   fill: var(--blue-colortext);
-  outline: #2196f3;
 }
 .form-label {
   font-weight: 400;
@@ -740,7 +748,9 @@ address {
   position: absolute;
   top: 50%;
   left: 12px;
+  fill: currentColor;
   transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .textarea {
   resize: none;
@@ -748,19 +758,24 @@ address {
   height: 120px;
   padding: 12px 16px;
   border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+.textarea:focus {
+  border-color: var(--blue-bg-color);
 }
 .modal-btn_submit {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 200px;
-  height: 50px;
-  margin-top: 21px;
+  min-width: 200px;
+  padding: 10px 52px;
+  font-weight: 700;
   margin-right: auto;
   margin-left: auto;
   border-radius: 4px;
+  cursor: pointer;
   border: none;
-  box-shadow: 0px, 4px rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.15);
   background-color: #188ce8;
   color: var(--white-colortext);
   font-style: Bold;
@@ -771,7 +786,7 @@ address {
 .modal-form-field {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-bottom: 30px;
   font-size: 14px;
   line-height: 1.46;
   color: var(--grey-colortext);
